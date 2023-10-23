@@ -5,7 +5,7 @@ import torch.nn as nn
 import numpy as np
 
 from knn_cuda import KNN
-from pointnet2_ops_lib.pointnet2_ops.pointnet2_utils import grouping_operation as group_point
+from pointnet2_ops.pointnet2_utils import grouping_operation as group_point
 
 
 def knn_point(group_size, point_cloud, query_cloud):
