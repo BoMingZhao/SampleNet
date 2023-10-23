@@ -54,9 +54,12 @@ class SampleNet(nn.Module):
         self.fc3 = nn.Linear(256, 256)
         self.fc4 = nn.Linear(256, 3 * num_out_points)
 
-        self.bn_fc1 = nn.BatchNorm1d(256)
-        self.bn_fc2 = nn.BatchNorm1d(256)
-        self.bn_fc3 = nn.BatchNorm1d(256)
+        self.bn_fc1 = nn.InstanceNorm1d(256)
+        # self.bn_fc1 = nn.BatchNorm1d(256)
+        self.bn_fc2 = nn.InstanceNorm1d(256)
+        # self.bn_fc2 = nn.BatchNorm1d(256)
+        # self.bn_fc3 = nn.BatchNorm1d(256)
+        self.bn_fc3 = nn.InstanceNorm1d(256)
 
         # projection and matching
         self.project = SoftProjection(
